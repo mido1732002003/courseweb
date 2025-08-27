@@ -1,0 +1,232 @@
+courses-platform/
+├── .env.example
+├── .env.local
+├── .eslintrc.json
+├── .gitignore
+├── .prettierrc
+├── next.config.js
+├── package.json
+├── postcss.config.js
+├── tailwind.config.ts
+├── tsconfig.json
+├── README.md
+├── robots.txt
+├── jest.config.js
+├── jest.setup.js
+├── vercel.json
+│
+├── prisma/
+│   ├── schema.prisma
+│   └── seed.ts
+│
+├── public/
+│   ├── favicon.ico
+│   ├── logo.svg
+│   └── images/
+│       └── placeholder-course.jpg
+│
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── loading.tsx
+│   │   ├── error.tsx
+│   │   ├── not-found.tsx
+│   │   ├── globals.css
+│   │   ├── sitemap.ts
+│   │   ├── robots.ts
+│   │   ├── manifest.ts
+│   │   │
+│   │   ├── api/
+│   │   │   ├── auth/
+│   │   │   │   ├── sign-up/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── sign-in/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── sign-out/
+│   │   │   │       └── route.ts
+│   │   │   ├── courses/
+│   │   │   │   ├── route.ts
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── search/
+│   │   │   │       └── route.ts
+│   │   │   ├── favorites/
+│   │   │   │   └── route.ts
+│   │   │   ├── progress/
+│   │   │   │   └── route.ts
+│   │   │   ├── sections/
+│   │   │   │   └── route.ts
+│   │   │   ├── roadmap/
+│   │   │   │   └── route.ts
+│   │   │   └── analytics/
+│   │   │       └── route.ts
+│   │   │
+│   │   ├── auth/
+│   │   │   ├── sign-in/
+│   │   │   │   └── page.tsx
+│   │   │   └── sign-up/
+│   │   │       └── page.tsx
+│   │   │
+│   │   ├── dashboard/
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   │   ├── loading.tsx
+│   │   │   ├── favorites/
+│   │   │   │   └── page.tsx
+│   │   │   └── recent/
+│   │   │       └── page.tsx
+│   │   │
+│   │   ├── sections/
+│   │   │   ├── page.tsx
+│   │   │   └── [slug]/
+│   │   │       ├── page.tsx
+│   │   │       └── loading.tsx
+│   │   │
+│   │   ├── courses/
+│   │   │   └── [slug]/
+│   │   │       ├── page.tsx
+│   │   │       ├── loading.tsx
+│   │   │       └── error.tsx
+│   │   │
+│   │   └── admin/
+│   │       ├── layout.tsx
+│   │       ├── page.tsx
+│   │       ├── sections/
+│   │       │   ├── page.tsx
+│   │       │   ├── new/
+│   │       │   │   └── page.tsx
+│   │       │   └── [id]/
+│   │       │       └── edit/
+│   │       │           └── page.tsx
+│   │       ├── courses/
+│   │       │   ├── page.tsx
+│   │       │   ├── new/
+│   │       │   │   └── page.tsx
+│   │       │   └── [id]/
+│   │       │       └── edit/
+│   │       │           └── page.tsx
+│   │       └── roadmaps/
+│   │           ├── page.tsx
+│   │           ├── new/
+│   │           │   └── page.tsx
+│   │           └── [id]/
+│   │               └── edit/
+│   │                   └── page.tsx
+│   │
+│   ├── components/
+│   │   ├── ui/
+│   │   │   ├── button.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── input.tsx
+│   │   │   ├── label.tsx
+│   │   │   ├── select.tsx
+│   │   │   ├── textarea.tsx
+│   │   │   ├── badge.tsx
+│   │   │   ├── skeleton.tsx
+│   │   │   ├── toast.tsx
+│   │   │   ├── toaster.tsx
+│   │   │   ├── dialog.tsx
+│   │   │   ├── dropdown-menu.tsx
+│   │   │   ├── tabs.tsx
+│   │   │   ├── progress.tsx
+│   │   │   ├── scroll-area.tsx
+│   │   │   └── separator.tsx
+│   │   │
+│   │   ├── layout/
+│   │   │   ├── navbar.tsx
+│   │   │   ├── footer.tsx
+│   │   │   ├── mobile-nav.tsx
+│   │   │   └── theme-toggle.tsx
+│   │   │
+│   │   ├── home/
+│   │   │   ├── hero-section.tsx
+│   │   │   ├── sections-grid.tsx
+│   │   │   ├── why-choose-us.tsx
+│   │   │   ├── key-features.tsx
+│   │   │   └── courses-feed.tsx
+│   │   │
+│   │   ├── course/
+│   │   │   ├── course-card.tsx
+│   │   │   ├── course-grid.tsx
+│   │   │   ├── course-filters.tsx
+│   │   │   ├── video-player.tsx
+│   │   │   ├── pdf-viewer.tsx
+│   │   │   ├── favorite-button.tsx
+│   │   │   ├── progress-bar.tsx
+│   │   │   └── course-details.tsx
+│   │   │
+│   │   ├── section/
+│   │   │   ├── section-badge.tsx
+│   │   │   ├── section-card.tsx
+│   │   │   └── roadmap-list.tsx
+│   │   │
+│   │   ├── admin/
+│   │   │   ├── course-form.tsx
+│   │   │   ├── section-form.tsx
+│   │   │   ├── roadmap-form.tsx
+│   │   │   └── data-table.tsx
+│   │   │
+│   │   ├── dashboard/
+│   │   │   ├── dashboard-nav.tsx
+│   │   │   ├── recent-courses.tsx
+│   │   │   ├── favorites-list.tsx
+│   │   │   └── stats-cards.tsx
+│   │   │
+│   │   └── shared/
+│   │       ├── search-bar.tsx
+│   │       ├── infinite-scroller.tsx
+│   │       ├── loading-skeleton.tsx
+│   │       ├── error-boundary.tsx
+│   │       ├── empty-state.tsx
+│   │       └── pagination.tsx
+│   │
+│   ├── lib/
+│   │   ├── prisma.ts
+│   │   ├── auth.ts
+│   │   ├── utils.ts
+│   │   ├── constants.ts
+│   │   ├── validations.ts
+│   │   ├── rate-limit.ts
+│   │   ├── analytics.ts
+│   │   └── api-client.ts
+│   │
+│   ├── hooks/
+│   │   ├── use-auth.ts
+│   │   ├── use-toast.ts
+│   │   ├── use-infinite-scroll.ts
+│   │   ├── use-debounce.ts
+│   │   ├── use-local-storage.ts
+│   │   ├── use-analytics.ts
+│   │   └── use-theme.ts
+│   │
+│   ├── actions/
+│   │   ├── auth.actions.ts
+│   │   ├── course.actions.ts
+│   │   ├── section.actions.ts
+│   │   ├── favorite.actions.ts
+│   │   ├── progress.actions.ts
+│   │   └── admin.actions.ts
+│   │
+│   ├── types/
+│   │   ├── index.ts
+│   │   ├── auth.types.ts
+│   │   ├── course.types.ts
+│   │   └── api.types.ts
+│   │
+│   ├── middleware.ts
+│   │
+│   └── providers/
+│       ├── auth-provider.tsx
+│       ├── theme-provider.tsx
+│       └── analytics-provider.tsx
+│
+└── __tests__/
+    ├── unit/
+    │   ├── utils.test.ts
+    │   ├── validations.test.ts
+    │   └── actions/
+    │       └── auth.actions.test.ts
+    └── integration/
+        └── api/
+            └── auth.test.ts
