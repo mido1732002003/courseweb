@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { verifyToken } from '@/lib/auth'
+import { verifyToken } from '@/lib/auth-edge'
+
 
 const protectedRoutes = ['/dashboard', '/admin']
 const authRoutes = ['/auth/sign-in', '/auth/sign-up']

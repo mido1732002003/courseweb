@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 import { Suspense } from 'react'
 import DashboardNav from '@/components/dashboard/dashboard-nav'
 import { Skeleton } from '@/components/ui/skeleton'
