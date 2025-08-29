@@ -19,7 +19,7 @@ export function MobileNav() {
     { href: '/courses', label: 'Courses' },
     ...(user ? [{ href: '/dashboard', label: 'Dashboard' }] : []),
     ...(user?.role === 'ADMIN' ? [{ href: '/admin', label: 'Admin' }] : []),
-  ]
+  ]; // 👈 لاحظ الـ semicolon هنا
 
   return (
     <div className="md:hidden">
@@ -34,50 +34,50 @@ export function MobileNav() {
 
       {open && (
         <>
-        {/* Overlay يغطي الخلفية */}
-        <div
-          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
-          onClick={() => setOpen(false)}
-        />
+          {/* Overlay يغطي الخلفية */}
+          <div
+            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+            onClick={() => setOpen(false)}
+          />
 
-        {/* القائمة نفسها */}
-        <div className="fixed top-0 right-0 z-50 w-64 h-full bg-background shadow-lg">
-          <nav className="grid gap-2 p-4">
-      
+          {/* القائمة نفسها */}
+          <div className="fixed top-0 right-0 z-50 w-64 h-full bg-background shadow-lg">
+            <nav className="grid gap-2 p-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className={cn(
+                    'flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground',
+                    pathname === item.href ? 'bg-accent' : 'transparent'
+                  )}
+                >
+                  {item.label}
+                </Link>
+              ))}
 
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className={cn(
-                  'flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground',
-                  pathname === item.href ? 'bg-accent' : 'transparent'
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
-            {!user && (
-              <>
-                <Link
-                  href="/auth/sign-in"
-                  onClick={() => setOpen(false)}
-                  className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
-                >
-                  Sign In
-                </Link>
-                <Link
-                  href="/auth/sign-up"
-                  onClick={() => setOpen(false)}
-                  className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
-                >
-                  Sign Up
-                </Link>
-              </>
-            )}
-          </nav>
-        </div>
+              {!user && (
+                <>
+                  <Link
+                    href="/auth/sign-in"
+                    onClick={() => setOpen(false)}
+                    className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                  >
+                    Sign In
+                  </Link>
+                  <Link
+                    href="/auth/sign-up"
+                    onClick={() => setOpen(false)}
+                    className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                  >
+                    Sign Up
+                  </Link>
+                </>
+              )}
+            </nav>
+          </div>
+        </>
       )}
     </div>
   )
