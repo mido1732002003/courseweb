@@ -32,7 +32,8 @@ export function MobileNav() {
         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </Button>
       {open && (
-        <div className="fixed inset-0 top-16 z-50 bg-background">
+        <div className="fixed top-0 right-0 z-50 w-64 h-full bg-background shadow-lg">
+
           <nav className="container grid gap-2 p-4">
             {navItems.map((item) => (
               <Link
