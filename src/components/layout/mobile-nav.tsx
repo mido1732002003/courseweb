@@ -41,7 +41,9 @@ export function MobileNav() {
           />
 
           {/* القائمة نفسها */}
-          <div className="fixed top-0 right-0 z-50 w-64 h-full bg-background shadow-lg">
+          <div className="fixed top-0 right-0 z-50 w-64 h-full bg-white shadow-lg">
+
+
             <nav className="grid gap-2 p-4">
               {navItems.map((item) => (
                 <Link
